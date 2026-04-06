@@ -1,46 +1,37 @@
 function changeHeadingText() {
-  if (typeof document !== "undefined") {
-    const heading = document.getElementById("main-heading")
-    if (heading) {
-      heading.textContent = "DOM Manipulation Challenge"
-    }
-  }
+  const heading = document.getElementById("main-heading")
+  heading.textContent = "DOM Manipulation Challenge"
 }
 
 function changeBoxColor() {
-  if (typeof document !== "undefined") {
-    const box = document.getElementById("box-to-modify")
-    if (box) {
-      box.style.backgroundColor = "lightblue"
-    }
-  }
+  const box = document.getElementById("box-to-modify")
+  box.style.backgroundColor = "lightblue"
 }
 
 function addNewItem() {
-  if (typeof document !== "undefined") {
-    const list = document.getElementById("item-list")
-    if (list) {
-      const newItem = document.createElement("li")
-      newItem.textContent = "New Item"
-      list.appendChild(newItem)
-    }
-  }
+  const newItem = document.createElement("li")
+  newItem.textContent = "New Item"
+  const list = document.getElementById("item-list")
+  list.appendChild(newItem)
 }
 
 function highlightParagraph() {
-  if (typeof document !== "undefined") {
-    const para = document.querySelector(".content-para")
-    if (para) {
-      para.classList.add("highlight")
-    }
-  }
+  const para = document.querySelector(".content-para")
+  para.classList.add("highlight")
 }
 
 function removeElement() {
-  if (typeof document !== "undefined") {
-    const element = document.getElementById("to-be-removed")
-    if (element) {
-      element.remove()
-    }
-  }
+  const element = document.getElementById("to-be-removed")
+  element.remove()
 }
+
+if (typeof module !== 'undefined' && module.exports) {
+    module.exports = {
+        changeHeadingText,
+        changeBoxColor,
+        addNewItem,
+        highlightParagraph,
+        removeElement
+    };
+}
+
